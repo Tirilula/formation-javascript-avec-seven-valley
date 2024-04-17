@@ -1,2 +1,6 @@
 # cours javascript
-https://github.com/Tirilula/formation-javascript-avec-seven-valley/deployments/github-pages
+https://tirilula.github.io/formation-javascript-avec-seven-valley/
+
+```js
+let x=42;
+```
