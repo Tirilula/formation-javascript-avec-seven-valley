@@ -1,0 +1,38 @@
+<h1>Calcul IMC </h1>
+ <!-- <ul>
+    <li>saisir poids</li>
+    <li>saisir la taille</li>
+    <li> calcul  : imc = poids / ( taille* taille)</li>
+    <li>arrondir a un chiffre</li>
+    <li> imc 	&lt; 18 maigreur</li>
+    <li> 18 	&lt; imc 	&lt; 25  normal</li>
+    <li> 25 	&lt; imc 	&lt; 30  surpoids</li>
+    <li> 30 	&lt; imc 	&lt; 35  obese</li>
+</ul>  -->
+<input id="poids" placeholder="Votre poids (kg)"/>
+<br><br>
+<input id="taille" placeholder="Votre taille (cm)"/>
+<br><br>
+<button onclick="imc()">Calcul</button>
+<h2>votre imc est <strong id="resultat">0</strong></h2>
+
+<script>
+function imc(){
+    // lecture des entrées
+    let poids = document.getElementById('poids').value;
+    let taille = document.getElementById('taille').value/100;
+    // vider les saisies
+    document.getElementById('poids').value ='';
+    document.getElementById('taille').value ='';
+    // Calcul imc sous conditions
+    let imc = '';
+    if (poids>0 && taille>0) {
+        imc = poids / (taille**2)
+    }
+    else{
+        let imc = 'Veuillez entrer votre poids et taille à nouveau';
+    }
+    // afficher le résultat
+    document.getElementById('resultat').innerHTML = Math.round(imc);
+    }
+</script>
