@@ -1,0 +1,52 @@
+<!-- table>thead>tr>th*2 -->
+<input type="text" id="prenom" placeholder="Prénom"><br><br>
+<input type="text" id="nom" placeholder="Nom"><br><br>
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template -->
+<button onclick="ajouter()">Go</button>
+<table>
+    <thead>
+        <tr>
+            <th>Prenom</th>
+            <th>Nom</th>
+        </tr>
+    </thead>
+    <!-- tbody>tr*2>td*2 -->
+    <tbody id="tableau">
+        <tr>
+            <td>Brad</td>
+            <td>Pitt</td>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>Cruise</td>
+        </tr>
+    </tbody>
+</table>
+
+<template id="ligne">
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </template>
+  <script>
+const ajouter = ()=>{
+
+    const tbody = document.querySelector("#tableau");
+  const template = document.querySelector("#ligne");
+  // je clone
+//   clone =<tr>
+//       <td></td>
+//       <td></td>
+//     </tr>
+  const clone = template.content.cloneNode(true);
+  let td = clone.querySelectorAll("td");
+  td[0].textContent = "brad";
+  td[1].textContent = "pitt";
+//   clone =<tr>
+//       <td>brad</td>
+//       <td>pitt</td>
+//     </tr>
+  tbody.appendChild(clone);
+}
+  </script>

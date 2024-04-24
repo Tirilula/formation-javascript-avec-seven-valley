@@ -1,0 +1,14 @@
+<button id="btn1">Go</button>
+<div id="depot"></div>
+<script>
+    document.getElementById('btn1').onclick=()=>{
+        // Création d'une balise P : <p></p>
+        let p = document.createElement('p');
+        //  <p>iest</p>
+        p.innerHTML='test';
+        //  <p class="rougz">iest</p>
+        p.setAttribute('class','rouge')
+        document.getElementById('depot').appendChild(p);
+        
+    }
+</script>
