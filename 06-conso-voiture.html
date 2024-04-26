@@ -5,4 +5,34 @@
     <li> voir fonction isNan()
 </ul> -->
 
-<h1
+<!-- Input pour le tableau -->
+<input id="trajet" placeholder='Nom du trajet' onkeyup="affiche()">
+<input id="km" placeholder='Km parcourus' onkeyup="affiche()">
+<input id="littres" placeholder="littres consommés" onkeyup="affiche()">
+
+<table>
+  <thead>
+    <tr>
+      <th>Trajet</th>
+      <th>Conso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>trajet</td>
+      <td>conso</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="conso">Conso voiture</h1>
+<script>
+    const affiche=()=>{
+    
+      km = document.getElementById('km').value;
+      litres = document.getElementById('littres').value;
+
+      conso = litres*100/km
+      document.getElementById('conso').innerHTML = conso
+    }
+ </script>
