@@ -9,14 +9,22 @@
 <input id="trajet" placeholder='Nom du trajet' onkeyup="affiche()">
 <input id="km" placeholder='Km parcourus' onkeyup="affiche()">
 <input id="litres" placeholder="litres consommés" onkeyup="affiche()">
+<button id="btn1">Enregistrer</button>
 <h1 id="conso">Conso voiture</h1>
 <script>
     const affiche=()=>{
-    
+      
       km = document.getElementById('km').value;
       litres = document.getElementById('litres').value;
 
       conso = litres*100/km
       document.getElementById('conso').innerHTML = conso
+
+      document.getElementById('btn1').onclick=()=>{
+      let p = document.createElement('p');
+      p.innerHTML= conso;
+      p.setAttribute('class', 'utilisation');
+      document.getElementById('conso').appendChild(p);
+      }
     }
  </script>
