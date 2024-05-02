@@ -1,0 +1,67 @@
+<!-- Saisie des valeurs -->
+<input id="trajet" placeholder='Nom du trajet' onkeyup="affiche()">
+<input id="km" placeholder='Km parcourus' onkeyup="affiche()">
+<input id="litres" placeholder="litres consommés" onkeyup="affiche()">
+<!-- Activation de l'enregistrement -->
+<button id="btn1" onclick="enregistrer()">Enregistrer</button>
+
+<h1 id="conso">Conso voiture</h1>
+<!-- Création du tableau à4 colonnes  -->
+<table>
+    <thead>
+        <tr>
+            <th>Nom du trajet</th>
+            <th>Km</th>
+            <th>litres</th>
+            <th>consommation</th>
+        </tr>
+    </thead>
+    <tbody id="tableau">
+        <template id="ligne">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+    </tbody>
+</table>
+<script>
+    const affiche = () => {
+        //   Acquisition des variables
+        trajet = document.getElementById('trajet').value;
+        km = document.getElementById('km').value;
+        litres = document.getElementById('litres').value;
+        // Calcul de la consommation
+        conso = litres * 100 / km
+        document.getElementById('conso').innerHTML = conso
+        // Remplir le tableau
+        
+        //   document.getElementById('btn1').onclick=()=>{
+            //   let p = document.createElement('p');
+            //   p.innerHTML= conso;
+            //   p.setAttribute('class', 'utilisation');
+            //   document.getElementById('conso').appendChild(p);
+            //   }
+        }
+        const enregistrer = () => {
+            //   Acquisition des variables
+        trajet = document.getElementById('trajet').value;
+        km = document.getElementById('km').value;
+        litres = document.getElementById('litres').value;
+        // Calcul de la consommation
+        conso = litres * 100 / km
+        // Ciblage
+            const tbody = document.querySelector("#tableau");
+            const template = document.querySelector("#ligne");
+        // clonage
+            const clone = template.content.cloneNode(true);
+            let td = clone.querySelectorAll("td");
+            td[0].textContent = document.getElementById('trajet').innerHTML;
+            td[1].textContent = document.getElementById('km').innerHTML;
+            td[2].textContent = document.getElementById('litre').innerHTML;
+            td[3].textContent = document.getElementById('conso').innerHTML;
+            tbody.appendChild(clone);
+        }
+    </script>
