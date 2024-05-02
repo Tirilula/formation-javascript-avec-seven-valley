@@ -46,16 +46,22 @@
             //   }
         }
         const enregistrer = () => {
-        
+            //   Acquisition des variables
+        trajet = document.getElementById('trajet').value;
+        km = document.getElementById('km').value;
+        litres = document.getElementById('litres').value;
+        // Calcul de la consommation
+        conso = litres * 100 / km
+        // Ciblage
             const tbody = document.querySelector("#tableau");
             const template = document.querySelector("#ligne");
         // clonage
             const clone = template.content.cloneNode(true);
             let td = clone.querySelectorAll("td");
-            td[0].textContent = trajet.innerHTML;
-            td[1].textContent = km.innerHTML;
-            td[2].textContent = litre.innerHTML;
-            td[3].textContent = conso.innerHTML;
+            td[0].textContent = document.getElementById('trajet').innerHTML;
+            td[1].textContent = document.getElementById('km').innerHTML;
+            td[2].textContent = document.getElementById('litre').innerHTML;
+            td[3].textContent = document.getElementById('conso').innerHTML;
             tbody.appendChild(clone);
         }
     </script>
