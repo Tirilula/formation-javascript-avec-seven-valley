@@ -52,6 +52,7 @@
         litres = document.getElementById('litres').value;
         // Calcul de la consommation
         conso = litres * 100 / km;
+        document.getElementById('conso').value = conso
         // Ciblage
             const tbody = document.querySelector("#tableau");
             const template = document.querySelector("#ligne");
