@@ -52,17 +52,17 @@
         litres = document.getElementById('litres').value;
         // Calcul de la consommation
         conso = litres * 100 / km;
-        document.getElementById('conso').value = conso
+        document.getElementById('conso').value = conso;
         // Ciblage
             const tbody = document.querySelector("#tableau");
             const template = document.querySelector("#ligne");
         // clonage
             const clone = template.content.cloneNode(true);
             let td = clone.querySelectorAll("td");
-            td[0].textContent = document.getElementById('trajet').value;
-            td[1].textContent = document.getElementById('km').value;
-            td[2].textContent = document.getElementById('litres').value;
-            td[3].textContent = document.getElementById('conso').value;
+            td[0].textContent = trajet;
+            td[1].textContent = km;
+            td[2].textContent = litres;
+            td[3].textContent = Math.round(conso);
             tbody.appendChild(clone);
         }
     </script>
