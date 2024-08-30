@@ -1,0 +1,68 @@
+
+<table>
+    <tbody id="tbody">
+    </tbody>
+</table>
+
+<template id="ligne">
+    <tr>
+        <td>fruit</td>
+    </tr>
+</template>
+<script>
+
+    let tableau = ['pomme','poire','cerises'];
+    console.table(tableau);
+
+    let tableau2 = [];
+    tableau2[0]='kiwi';
+    tableau2[1]='banane';
+    console.table(tableau2);
+
+    let couleurs = [];
+    couleurs.push ('vert')
+    couleurs.push ('rouge')
+    couleurs.push ('jaune')
+    console.table(couleurs);
+    console.log(couleurs.length);
+
+    // Parcourir le tableau 
+
+    for (let i = 0; i<couleurs.length;i++){
+        console.log(couleurs[i]);
+    }
+    for (let couleur of couleurs){
+        console.log(couleur)
+    }
+
+    let nombres=[]
+
+    for (let i=0; i<4; i++){
+        // nombres[i]=i*10
+        nombres.push(i*10)
+    }
+    console.log(nombres)
+
+    // Efface un index splice / Copier slice
+
+    couleurs.splice(1,1);
+    // Le premier indice puis nombre d'éléments à effacer
+    console.table(couleurs)
+
+    // Fusionner tableaux 
+    let tableau3 = tableau.concat(tableau2); 
+    // tableau 3 = tableau + tableau2
+    console.table(tableau3)
+
+    let tab=tableau3.splice(2,3)
+    console.table(tab)
+    let selecteur=document.getElementById('tbody');
+    let template=document.getElementById('ligne')
+    for (let f of tab){
+        const clone = template.content.cloneNode(true);
+        let td = clone.querySelector("td");
+        td.innerHTML=f
+        selecteur.appendChild(td);
+    }
+
+</script>
